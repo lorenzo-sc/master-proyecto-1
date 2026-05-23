@@ -245,6 +245,53 @@ button {
     font-size: 1.3rem;
 }
 
+.system-notification {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--color-acento-secundario);
+    border-radius: 4px;
+    background: rgba(125, 249, 255, 0.05);
+}
+
+.notification-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.notification-deco {
+    color: var(--color-acento-secundario);
+    font-size: 1rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+    font-family: var(--fuente-titulos);
+}
+
+.notification-label {
+    color: var(--color-acento-secundario);
+    font-size: 1rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+    font-family: var(--fuente-titulos);
+}
+
+.notification-text {
+    color: var(--color-texto-principal);
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    font-family: var(--fuente-body);
+}
+
+.rank-letter {
+    color: var(--color-acento-primario);
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
 .hero-btn {
     display: inline-block;
     
