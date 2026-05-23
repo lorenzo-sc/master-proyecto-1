@@ -541,7 +541,7 @@ OVERLAY LINK START
     letter-spacing: 2px;
 }
 
-/* Al marcar el checkbox, ocultar el overlay */
+/* Al marcar el checkbox, que se oculte el overlay */
 #overlay-toggle:checked ~ #overlay {
     display: none;
 }
@@ -571,5 +571,35 @@ QUE CARGUE TODO ASI:*/
     
     body {
         padding-top: 120px;
+    }
+
+    .overlay-titulo {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+    }
+    
+    .overlay-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .hero-titulo {
+        font-size: 2rem;
+    }
+    
+    .hero-prefix {
+        font-size: 1.5rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    #sobre-mi .profile-lore p {
+        font-family: var(--fuente-body);
+        font-size: 0.9rem;
+    }
+    
+    .hero-box {
+        padding: 2rem 1rem;
     }
 }
