@@ -73,6 +73,12 @@ header{
     border-bottom: 1px solid var(--color-acento-secundario);
 }
 
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
 nav a {
     transition: color 0.3s ease;
 }
@@ -113,12 +119,6 @@ main{
 section{
     padding: 4rem 0;
     scroll-margin-top: 75px;
-}
-
-nav ul{
-    display: flex;
-    list-style: none;
-    gap: 2rem;
 }
 
 footer {
@@ -164,7 +164,7 @@ SECCIONES
 
 
 /* =========================
-COMPONENTES
+COMPONENTES GENÉRICOS
 ========================= */
 
 article {
@@ -200,11 +200,11 @@ button {
     cursor: pointer;
 }
 
-/* HERO */
 
-.hero-prefix {
-    color: var(--color-acento-secundario);
-}
+
+/* =========================
+HERO
+========================= */
 
 .hero-box {
     display: flex;
@@ -233,6 +233,10 @@ button {
     letter-spacing: 2px;
 }
 
+.hero-prefix {
+    color: var(--color-acento-secundario);
+}
+
 .hero-alias {
     color: var(--color-acento-primario);
     letter-spacing: 2px;
@@ -244,6 +248,33 @@ button {
     letter-spacing: 2px;
     font-size: 1.3rem;
 }
+
+.hero-btn {
+    display: inline-block;
+    
+    padding: 1rem 2.5rem;
+    margin-top: 1rem;
+    
+    background: var(--color-acento-primario);
+    color: var(--color-texto-principal);
+    border-radius: 8px;
+    
+    font-family: var(--fuente-titulos);
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    
+    transition: transform 0.3s ease;
+}
+
+.hero-btn:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* =========================
+NOTIFICATIONS
+========================= */
 
 .system-notification {
     display: flex;
@@ -292,47 +323,11 @@ button {
     letter-spacing: 3px;
 }
 
-.hero-btn {
-    display: inline-block;
-    
-    padding: 1rem 2.5rem;
-    margin-top: 1rem;
-    
-    background: var(--color-acento-primario);
-    color: var(--color-texto-principal);
-    border-radius: 8px;
-    
-    font-family: var(--fuente-titulos);
-    letter-spacing: 2px;
-    font-size: 1.2rem;
-    
-    transition: transform 0.3s ease;
-}
 
-.hero-btn:hover {
-    transform: scale(1.05);
-}
 
-/* SOBRE MI */
-
-#sobre-mi .profile-lore p {
-    font-family: 'Courier New', monospace;
-    font-size: 0.95rem;
-    text-align: left;
-    width: 100%;
-}
-
-.system-tag {
-    color: var(--color-acento-secundario);
-    font-weight: 700;
-    margin-right: 0.5rem;
-}
-
-#contacto h2 {
-    margin-bottom: 2rem;
-}
-
-/* SOBRE MI - background */
+/* =========================
+SOBRE MI - LORE
+========================= */
 
 .profile-lore {
     display: flex;
@@ -348,7 +343,19 @@ button {
     line-height: 1.6;
 }
 
-/* SOBRE MI - SKILLS GRID */
+#sobre-mi .profile-lore p {
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    text-align: left;
+    width: 100%;
+}
+
+
+
+/* =========================
+SOBRE MI - SKILLS
+========================= */
+
 .skills-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -388,7 +395,23 @@ button {
     margin-bottom: 0.5rem;
 }
 
-/* Barra XP */
+.skill-desc {
+    color: var(--color-texto-principal);
+    font-size: 0.85rem;
+    
+    display: none;
+}
+
+.skill-card:hover .skill-desc {
+    display: block;
+}
+
+
+
+/* =========================
+BARRAS XP
+========================= */
+
 .xp-bar {
     width: 80%;
     margin-left: auto;
@@ -413,6 +436,14 @@ button {
 
 /* Niveles de XP - ancho de la barra según el nivel */
 
+.lv-5 {
+    width: 50%;
+}
+
+.lv-6 {
+    width: 60%;
+}
+
 .lv-7 {
     width: 70%;
 }
@@ -425,42 +456,14 @@ button {
     width: 90%;
 }
 
-/* Descripción oculta por defecto */
-.skill-desc {
-    color: var(--color-texto-principal);
-    font-size: 0.85rem;
-    
-    display: none;
-}
-
-/* Al hacer hover sobre la tarjeta, mostrar la descripción */
-.skill-card:hover .skill-desc {
-    display: block;
-}
-
 
 
 /* =========================
-CHECKBOX HACK
+CONTACTO
 ========================= */
 
-/* Ocultar el checkbox */
-#login-check {
-    display: none;
-}
-
-/* Panel oculto por defecto */
-.contacto-panel {
-    display: none;
-}
-
-/* Toggle de paneles */
-#login-check:checked ~ .login-panel {
-    display: none;
-}
-
-#login-check:checked ~ .contacto-panel {
-    display: block;
+#contacto h2 {
+    margin-bottom: 2rem;
 }
 
 .login-panel {
@@ -487,6 +490,33 @@ CHECKBOX HACK
     font-family: var(--fuente-titulos);
     letter-spacing: 2px;
 }
+
+
+
+/* =========================
+CHECKBOX
+========================= */
+
+/* Ocultar el checkbox */
+#login-check {
+    display: none;
+}
+
+/* Panel oculto por defecto */
+.contacto-panel {
+    display: none;
+}
+
+/* Toggle de paneles */
+#login-check:checked ~ .login-panel {
+    display: none;
+}
+
+#login-check:checked ~ .contacto-panel {
+    display: block;
+}
+
+
 
 /* =========================
 OVERLAY LINK START
@@ -546,8 +576,11 @@ OVERLAY LINK START
     display: none;
 }
 
-/*BLOQUE MEDIA QUERY - CONDICION: SI EL ANCHO DE PANTALLA ES MENOR A 768px (ES DECIR UN MÓVIL)
-QUE CARGUE TODO ASI:*/
+
+
+/* =========================
+MEDIA QUERY - MÓVIL (max-width: 768px)
+========================= */
 
 @media (max-width: 768px) {
     
